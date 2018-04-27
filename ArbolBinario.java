@@ -1,6 +1,7 @@
-package tpe;
+
 public class ArbolBinario {
 	NodeArbol root;
+	private int contador;
 
 	public ArbolBinario() {
 		root = null;
@@ -9,44 +10,40 @@ public class ArbolBinario {
 	public Object getRoot() {
 		return root.getInfo();
 	}
-	 
-	public Indice hasElement(String genero) {
-		return hasElement(root, genero); 
-	}  
-	
-	private Indice hasElement(NodeArbol raiz, String genero) {
-		int contadorNodos = 0;
+	/*corresponde a la entrega*/
+	public Indice hasElement(String o) {
+		return hasElem(root, o);
+	}
+	/*corresponde a la entrega*/
+	private Indice hasElem(NodeArbol raiz, String o) {
+		contador++;
 		Indice hasElement = null;
 		if (raiz != null) {
-			if (genero.equals(raiz.getInfo().getGenero())) {
-				contadorNodos += contadorNodos++;
+			if (o.equals(raiz.getInfo().getGenero())) {
 				return raiz.getInfo();
-			} 
-			else if (raiz.getInfo().getGenero().compareTo(genero) == -1) {
-				contadorNodos += contadorNodos++;
-				hasElement = hasElement(raiz.getNodeIzq(), genero);
-			} 
-			else {
-				contadorNodos += contadorNodos++;
-				hasElement = hasElement(raiz.getNodeDer(), genero);
+			} else if (raiz.getInfo().getGenero().compareTo(o) == -1) {
+				hasElement = hasElem(raiz.getNodeIzq(), o);
+			} else {
+				hasElement = hasElem(raiz.getNodeDer(), o);
 			}
 		}
-		System.out.println("Nodos visitados: "+ contadorNodos);
 		return hasElement;
 	}
 
 	public boolean isEmpty() {
 		return root == null;
-	}  
-	
-	public void insert(Indice o) {
-		NodeArbol temporal = new NodeArbol(o); 
-		if (isEmpty()) {
-			root = temporal;
-		} else {
-			insert(root, temporal);
-		}
 	}
+	/*corresponde a la entrega*/
+	public void insert(Indice o) {
+		NodeArbol tmp = new NodeArbol(o);
+		if (isEmpty()) {
+			root = tmp;
+		} else {
+			insert(root, tmp);
+		}
+	
+	}
+	/*corresponde a la entrega*/
 	private void insert(NodeArbol raiz, NodeArbol tmp) {
 		if (raiz.getInfo().getGenero().compareTo(tmp.getInfo().getGenero()) == -1  ) {
 			if (raiz.getNodeIzq() != null) {
@@ -179,7 +176,7 @@ public class ArbolBinario {
 
 	private void printPreOrder(NodeArbol root2) {
 		if (root2 != null) {
-			System.out.print(root2.getInfo() + " ");
+			System.out.print(root2.getInfo().getGenero() + " ");
 			printPreOrder(root2.getNodeIzq());
 			printPreOrder(root2.getNodeDer());
 		} else {
@@ -193,12 +190,20 @@ public class ArbolBinario {
 
 	private void order(NodeArbol raiz) {
 		if (raiz != null) {
-			printPreOrder(raiz.getNodeIzq());
-			System.out.print(raiz.getInfo() + " ");
-			printPreOrder(raiz.getNodeDer());
+			order(raiz.getNodeIzq());
+			System.out.print(raiz.getInfo().getGenero() + " ");
+			order(raiz.getNodeDer());
 		} else {
 			System.out.print("- ");
 		}
 
+	}
+
+	public int getContador() {
+		return contador;
+	}
+
+	public void setContador(int contador) {
+		this.contador = contador;
 	}
 }
