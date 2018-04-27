@@ -1,26 +1,27 @@
+package tpe;
+
 public class NodeArbol {
-	private Genero info;
+	private Indice info;
 	private NodeArbol nodeDer;
 	private NodeArbol nodeIzq;
 
-	public NodeArbol(Genero o) {
+	public NodeArbol(Indice o) {
 		info = o;
 		nodeDer = null;
-		nodeIzq = null;
+		nodeIzq = null; 
 	}
 
-	public NodeArbol(Genero o, NodeArbol n , NodeArbol p) {
+	public NodeArbol(Indice o, NodeArbol n , NodeArbol p) {
 		setInfo(o);
 		setNodeDer(n);
 		setNodeIzq(p);
 	}
 
 	public void setNodeIzq(NodeArbol p) {
-		// TODO Auto-generated method stub
 		nodeIzq = p; 
 	}
 
-	public void setInfo(Genero o) {
+	public void setInfo(Indice o) {
 		info = o;
 	}
 
@@ -28,16 +29,16 @@ public class NodeArbol {
 		nodeDer = n;
 	}
 
-	public Genero getInfo() {
+	public Indice getInfo() {
 		return info;
 	}
 
 	public NodeArbol getNodeDer() {
 		return nodeDer;
 	}
+	
 	public NodeArbol getNodeIzq() {
 		return nodeIzq;
 	}
-
 	
 }

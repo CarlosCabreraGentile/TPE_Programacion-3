@@ -1,3 +1,4 @@
+package tpe;
 public class ArbolBinario {
 	NodeArbol root;
 
@@ -8,38 +9,44 @@ public class ArbolBinario {
 	public Object getRoot() {
 		return root.getInfo();
 	}
-	/*corresponde a la entrega*/
-	public Genero hasElem(String o) {
-		return hasElem(root, o);
-	}
-	/*corresponde a la entrega*/
-	private Genero hasElem(NodeArbol raiz, String o) {
-		Genero hasElement = null;
+	 
+	public Indice hasElement(String genero) {
+		return hasElement(root, genero); 
+	}  
+	
+	private Indice hasElement(NodeArbol raiz, String genero) {
+		int contadorNodos = 0;
+		Indice hasElement = null;
 		if (raiz != null) {
-			if (o.equals(raiz.getInfo().getGenero())) {
+			if (genero.equals(raiz.getInfo().getGenero())) {
+				contadorNodos += contadorNodos++;
 				return raiz.getInfo();
-			} else if (raiz.getInfo().getGenero().compareTo(o) == -1) {
-				hasElement = hasElem(raiz.getNodeIzq(), o);
-			} else {
-				hasElement = hasElem(raiz.getNodeDer(), o);
+			} 
+			else if (raiz.getInfo().getGenero().compareTo(genero) == -1) {
+				contadorNodos += contadorNodos++;
+				hasElement = hasElement(raiz.getNodeIzq(), genero);
+			} 
+			else {
+				contadorNodos += contadorNodos++;
+				hasElement = hasElement(raiz.getNodeDer(), genero);
 			}
 		}
+		System.out.println("Nodos visitados: "+ contadorNodos);
 		return hasElement;
 	}
 
 	public boolean isEmpty() {
 		return root == null;
-	}
-	/*corresponde a la entrega*/
-	public void insert(Genero o) {
-		NodeArbol tmp = new NodeArbol(o);
+	}  
+	
+	public void insert(Indice o) {
+		NodeArbol temporal = new NodeArbol(o); 
 		if (isEmpty()) {
-			root = tmp;
+			root = temporal;
 		} else {
-			insert(root, tmp);
+			insert(root, temporal);
 		}
 	}
-	/*corresponde a la entrega*/
 	private void insert(NodeArbol raiz, NodeArbol tmp) {
 		if (raiz.getInfo().getGenero().compareTo(tmp.getInfo().getGenero()) == -1  ) {
 			if (raiz.getNodeIzq() != null) {

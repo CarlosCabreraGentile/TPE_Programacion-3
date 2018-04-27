@@ -1,9 +1,11 @@
-import java.util.ArrayList;
-
-public class Genero {
-	protected String genero;
+package tpe;
+import java.util.ArrayList; 
+ 
+public class Indice { 
+	protected String genero; 
 	protected ArrayList <Libro> libros;
-	public Genero(String genero) {
+	
+	public Indice(String genero) {
 		this.genero = genero;
 		libros = new ArrayList<Libro>();
 	}
@@ -19,7 +21,9 @@ public class Genero {
 	public void setLibros(ArrayList<Libro> libros) {
 		this.libros = libros;
 	}
+	
 	public void addLibro(Libro l) {
 		libros.add(l);
 	}
+	
 }
