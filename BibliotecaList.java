@@ -1,4 +1,4 @@
-
+package TPE;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,10 +9,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-/**
- * @author maxi
- *
- */
 public class BibliotecaList {
 	static int contador;
 	public static void main(String[] args) {
@@ -50,9 +46,6 @@ public class BibliotecaList {
 		double elapsedTime = timer.stop();
 		System.out.println("Tiempo ArrayList: " + elapsedTime);
 		/* TERMINA EL TIMER */
-
-
-
 		// output(buscarGenero(indice, "terror"));
 
 	}
@@ -73,8 +66,6 @@ public class BibliotecaList {
 		}
 		return retorno; 
 	}  
- 
-	
 	
 	public static int obtenerNumero() {
 		boolean exit = false;
@@ -126,6 +117,7 @@ public class BibliotecaList {
 	 * @param libro
 	 * agrega a cada genero su respectivo libro
 	 */
+	
 	private static void agregarLibroAlIndice(ArrayList<Indice> retorno, String[] arrGeneros, Libro libro) {
 		boolean exit = false;
 		for (int i = 0; i < arrGeneros.length; i++) {
@@ -140,11 +132,13 @@ public class BibliotecaList {
 			}
 		}
 	}
+	
 	/**
 	 * @param retorno
 	 * @param arrGeneros
 	 * Este metodo carga a un arraylist los indices correspondientes
 	 */ 
+	
 	private static void cargarListaIndices(ArrayList<Indice> retorno, String[] arrGeneros) {/* carlos , maxi,silvina */
 		Indice k;
 		if (retorno.isEmpty()) {/*solo en el primer libro que llega*/
@@ -175,8 +169,9 @@ public class BibliotecaList {
 	 * @return 
 	 * Esta función lee los archivos csv y los carga en un arraylist
 	 */
+	
 	public static ArrayList<Libro> input(int numero) {
-		String csvFile = "C:\\Users\\maxi\\Desktop\\tpe prog3\\dataset" + numero + ".csv";
+		String csvFile = "F:\\TUDAI\\2do año\\Primer Cuatrimestre\\Programacion 3\\2018\\TPE_Programacion-3\\dataset" + numero + ".csv";
 		String line = "";
 		String cvsSplitBy = ",";
 		ArrayList<Libro> libros = new ArrayList<Libro>();

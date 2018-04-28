@@ -1,3 +1,5 @@
+package TPE;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -23,30 +25,12 @@ public class BibliotecaArbol {
 //		double elapsedTime2 = timer2.stop();
 //		System.out.println("Tiempo arbol: " + elapsedTime2);
 		/* TERMINA EL TIMER */
-//		Indice a=new Indice("humor");
-//		Indice b=new Indice("thriller");
-//		Indice c=new Indice("investigacion");
-////		Indice d=new Indice("infantil");
-//		
-//		indiceArbolBinario.insert(a);
-//		indiceArbolBinario.insert(b);
-//		indiceArbolBinario.insert(c);
-//		indiceArbolBinario.insert(d);
+
 		indiceArbolBinario.printPreOrder();
-//		String str1  = "humor"; 
-		String str2  = "thriller";
-		String str3  = "investigacion";
-//		System.out.println(str1.toString().compareTo(str2.toString()));
-//		System.out.println(str2.compareTo(str1));
-//		System.out.println(str2.compareTo(str3));
-//		System.out.println(str3.compareTo(str2));
-//		System.out.println(str2.compareTo(str2));
-//		System.out.println(str1.compareTo(str3));
-//	       String cadena1="moto";
-//	        String cadena2="mota";
-//	 
-//	        System.out.println(cadena1.compareToIgnoreCase(cadena2));
-	}public static int obtenerNumero() {
+
+	}
+	
+	public static int obtenerNumero() {
 		boolean exit = false;
 		int valor = 0;
 
@@ -84,6 +68,7 @@ public class BibliotecaArbol {
 		}
 		return retorno;
 	}
+	
 	public static ArrayList<Libro> buscarGeneroEnArbol(ArbolBinario indice, String genero) {
 		ArrayList<Libro> retorno;
 		Indice aux;
@@ -91,6 +76,7 @@ public class BibliotecaArbol {
 		retorno = aux.getLibros();
 		return retorno;
 	}
+	
 	private static void agregarLibroAlIndiceArbol(ArbolBinario retorno, String[] arrGeneros, Libro libro) {
 		for (int i = 0; i < arrGeneros.length; i++) {
 			retorno.hasElement(arrGeneros[i]).addLibro(libro);
@@ -101,6 +87,7 @@ public class BibliotecaArbol {
 	 * @param arrGeneros
 	 * Este metodo carga a un arbol los indices correspondientes
 	 */
+	
 	private static void cargarArbolIndice(ArbolBinario retorno, String[] arrGeneros) {
 		Indice g;
 		for (int i = 0; i < arrGeneros.length; i++) {/*1 millon libros cada uno tiene x generos + comparaciones*/
@@ -110,13 +97,15 @@ public class BibliotecaArbol {
 			}
 		}
 	}
+	
 	/**
 	 * @param numero
 	 * @return 
 	 * Esta función lee los archivos csv y los carga en un arraylist
 	 */
+	
 	public static ArrayList<Libro> input(int numero) {
-		String csvFile = "C:\\Users\\maxi\\Desktop\\tpe prog3\\dataset" + numero + ".csv";
+		String csvFile = "F:\\TUDAI\\2do año\\Primer Cuatrimestre\\Programacion 3\\2018\\TPE_Programacion-3\\dataset" + numero + ".csv";
 		String line = "";
 		String cvsSplitBy = ",";
 		ArrayList<Libro> libros = new ArrayList<Libro>();
@@ -137,6 +126,7 @@ public class BibliotecaArbol {
 		}
 		return libros; 
 	}
+	
 	/**
 	 * @param generos
 	 * @return
@@ -147,10 +137,12 @@ public class BibliotecaArbol {
 		String[] arrGeneros = generos.split(" ");
 		return arrGeneros;
 	}
+	
 	/**
 	 * @param arrGeneros
 	 * @return  
 	 */
+	
 	private static ArbolBinario crearGeneroArbol(String[] arrGeneros) {
 		ArbolBinario retorno = new ArbolBinario();
 		
@@ -161,10 +153,12 @@ public class BibliotecaArbol {
 		}
 		return retorno;
 	}
+	
 	/**
 	 * @param generosLibro
 	 * Esta función escribe un archivo csv 
 	 */
+	
 	public static void output(ArrayList<Libro> generosLibro) {
 		BufferedWriter bw = null;
 		try {
@@ -193,6 +187,5 @@ public class BibliotecaArbol {
 			}
 		}
 	}
-
 
 }

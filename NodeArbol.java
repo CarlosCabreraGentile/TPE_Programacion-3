@@ -1,13 +1,14 @@
+package TPE;
 
 public class NodeArbol {
 	private Indice info;
-	private NodeArbol nodeDer;
-	private NodeArbol nodeIzq;
+	private NodeArbol nodeDerecha;
+	private NodeArbol nodeIzquierda;
 
 	public NodeArbol(Indice o) {
 		info = o;
-		nodeDer = null;
-		nodeIzq = null;
+		nodeDerecha = null;
+		nodeIzquierda = null;
 	}
 
 	public NodeArbol(Indice o, NodeArbol n , NodeArbol p) {
@@ -18,7 +19,7 @@ public class NodeArbol {
 
 	public void setNodeIzq(NodeArbol p) {
 		// TODO Auto-generated method stub
-		nodeIzq = p; 
+		nodeIzquierda = p; 
 	}
 
 	public void setInfo(Indice o) {
@@ -26,7 +27,7 @@ public class NodeArbol {
 	}
 
 	public void setNodeDer(NodeArbol n) {
-		nodeDer = n;
+		nodeDerecha = n;
 	}
 
 	public Indice getInfo() {
@@ -34,11 +35,11 @@ public class NodeArbol {
 	}
 
 	public NodeArbol getNodeDer() {
-		return nodeDer;
+		return nodeDerecha;
 	}
+	
 	public NodeArbol getNodeIzq() {
-		return nodeIzq;
+		return nodeIzquierda;
 	}
-
 	
 }

@@ -1,4 +1,4 @@
-package tpe;
+package TPE;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -228,7 +228,7 @@ public class Biblioteca {
 	 * Esta función lee los archivos csv y los carga en un arraylist
 	 */
 	public static ArrayList<Libro> input(int numero) {
-		String csvFile = "C:\\Tudai\\2do año\\Programacion 3\\2018\\tpe\\dataset" + numero + ".csv";
+		String csvFile = "F:\\TUDAI\\2do año\\Primer Cuatrimestre\\Programacion 3\\2018\\TPE_Programacion-3\\dataset" + numero + ".csv";
 		String line = "";
 		String cvsSplitBy = ",";
 		ArrayList<Libro> libros = new ArrayList<Libro>();
