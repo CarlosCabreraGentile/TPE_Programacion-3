@@ -15,13 +15,13 @@ public class BibliotecaArbol {
 		ArrayList<Libro> archivoDataset = input(numeroDataSet);
 		indiceArbolBinario = crearArbolDeIndices(archivoDataset);
 		/* ARRANCA EL TIMER */
-		Timer timer2 = new Timer();
-		timer2.start();
+//		Timer timer2 = new Timer();
+//		timer2.start();
 //		buscarGeneroEnArbol(indiceArbolBinario, "terror");
-		timer2.stop();
-
-		double elapsedTime2 = timer2.stop();
-		System.out.println("Tiempo arbol: " + elapsedTime2);
+//		timer2.stop();
+//
+//		double elapsedTime2 = timer2.stop();
+//		System.out.println("Tiempo arbol: " + elapsedTime2);
 		/* TERMINA EL TIMER */
 //		Indice a=new Indice("humor");
 //		Indice b=new Indice("thriller");
@@ -31,9 +31,21 @@ public class BibliotecaArbol {
 //		indiceArbolBinario.insert(a);
 //		indiceArbolBinario.insert(b);
 //		indiceArbolBinario.insert(c);
-////		indiceArbolBinario.insert(d);
+//		indiceArbolBinario.insert(d);
 		indiceArbolBinario.printPreOrder();
-		
+//		String str1  = "humor"; 
+		String str2  = "thriller";
+		String str3  = "investigacion";
+//		System.out.println(str1.toString().compareTo(str2.toString()));
+//		System.out.println(str2.compareTo(str1));
+//		System.out.println(str2.compareTo(str3));
+//		System.out.println(str3.compareTo(str2));
+//		System.out.println(str2.compareTo(str2));
+//		System.out.println(str1.compareTo(str3));
+//	       String cadena1="moto";
+//	        String cadena2="mota";
+//	 
+//	        System.out.println(cadena1.compareToIgnoreCase(cadena2));
 	}public static int obtenerNumero() {
 		boolean exit = false;
 		int valor = 0;
@@ -80,10 +92,8 @@ public class BibliotecaArbol {
 		return retorno;
 	}
 	private static void agregarLibroAlIndiceArbol(ArbolBinario retorno, String[] arrGeneros, Libro libro) {
-		Indice aux;
 		for (int i = 0; i < arrGeneros.length; i++) {
-			aux = retorno.hasElement(arrGeneros[i]);
-			aux.addLibro(libro);
+			retorno.hasElement(arrGeneros[i]).addLibro(libro);
 		}
 	} 
 	/**

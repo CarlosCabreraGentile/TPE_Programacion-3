@@ -21,7 +21,7 @@ public class ArbolBinario {
 		if (raiz != null) {
 			if (o.equals(raiz.getInfo().getGenero())) {
 				return raiz.getInfo();
-			} else if (raiz.getInfo().getGenero().compareTo(o) == -1) {
+			} else if (raiz.getInfo().getGenero().compareTo(o) > 0) {
 				hasElement = hasElem(raiz.getNodeIzq(), o);
 			} else {
 				hasElement = hasElem(raiz.getNodeDer(), o);
@@ -45,7 +45,7 @@ public class ArbolBinario {
 	}
 	/*corresponde a la entrega*/
 	private void insert(NodeArbol raiz, NodeArbol tmp) {
-		if (raiz.getInfo().getGenero().compareTo(tmp.getInfo().getGenero()) == -1  ) {
+		if ((raiz.getInfo().getGenero().compareTo(tmp.getInfo().getGenero())) > 0 ) {
 			if (raiz.getNodeIzq() != null) {
 				insert(raiz.getNodeIzq(), tmp);
 			} else {
