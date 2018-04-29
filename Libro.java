@@ -1,4 +1,4 @@
-package TPE;
+
 
 public class Libro {
 	protected String nombre;

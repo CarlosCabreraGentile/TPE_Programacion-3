@@ -1,4 +1,3 @@
-package TPE;
 
 public class ArbolBinario {
 	NodeArbol root;

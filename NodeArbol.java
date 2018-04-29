@@ -1,4 +1,4 @@
-package TPE;
+
 
 public class NodeArbol {
 	private Indice info;
