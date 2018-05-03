@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class BibliotecaList extends Biblioteca{
 	static int contador;
@@ -7,7 +8,7 @@ public class BibliotecaList extends Biblioteca{
 		int numeroDataSet = obtenerNumero();
 		ArrayList<Indice> indice;
 		
-		ArrayList<Libro> archivoDataset = input(numeroDataSet);
+		MySimpleLinkedList archivoDataset = input(numeroDataSet);
 
 //		 /*ARRANCA EL TIMER*/
 //		 Timer timer = new Timer();
@@ -47,15 +48,17 @@ public class BibliotecaList extends Biblioteca{
 	 * @return
 	 * Este metodo genera el conjunto de indices que va a contener el ArryLIst
 	 */
-	public static ArrayList<Indice> crearIndice(ArrayList<Libro> libros) {
+	public static ArrayList<Indice> crearIndice(MySimpleLinkedList libros) {
 		ArrayList<Indice> retorno = new ArrayList<Indice>();
 		String[] arrGeneros;
 		for (int i = 0; i < libros.size(); i++) {
-			arrGeneros = libros.get(i).getGeneros();
+			Libro aux = libros.getNodo();
+			arrGeneros= aux.getGeneros();
 			cargarListaIndices(retorno, arrGeneros);/*este metodo agrega generos de un libro al array de indices*/
-			System.out.println("arrayList "+contador);
-			agregarLibroAlIndice(retorno, arrGeneros, libros.get(i));
+			System.out.println("arrayList "+contador+" "+aux.getNombre());
+			agregarLibroAlIndice(retorno, arrGeneros, aux);
 		}
+		libros.resetCursor();
 		return retorno; 
 	}  
 	

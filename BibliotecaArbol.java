@@ -1,12 +1,13 @@
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class BibliotecaArbol extends Biblioteca{
 
 	public static void main(String[] args) {
 		ArbolBinario indiceArbolBinario;
 		int numeroDataSet = obtenerNumero();
-		ArrayList<Libro> archivoDataset = input(numeroDataSet);
+		MySimpleLinkedList archivoDataset = input(numeroDataSet);
 		indiceArbolBinario = crearIndice(archivoDataset);
 		/* ARRANCA EL TIMER */
 //		Timer timer2 = new Timer();
@@ -21,15 +22,16 @@ public class BibliotecaArbol extends Biblioteca{
 		indiceArbolBinario.printPreOrder();
 
 	}
-	public static ArbolBinario crearIndice(ArrayList<Libro> libros) {
+	public static ArbolBinario crearIndice(MySimpleLinkedList libros) {
 		ArbolBinario retorno = new ArbolBinario();
 		String[] arregloGeneros;
 		for (int i = 0; i < libros.size(); i++) {
-			arregloGeneros = libros.get(i).getGeneros();
+			Libro Aux = libros.getNodo();
+			arregloGeneros = Aux.getGeneros();
 			cargarArbolIndice(retorno, arregloGeneros);
-			System.out.println(retorno.getContador());
-			agregarLibroAlIndiceArbol(retorno, arregloGeneros, libros.get(i));
+			agregarLibroAlIndiceArbol(retorno, arregloGeneros, Aux);
 		}
+		libros.resetCursor();
 		return retorno;
 	}
 	
@@ -76,5 +78,8 @@ public class BibliotecaArbol extends Biblioteca{
 		}
 		return retorno;
 	}
+	
+
+
 
 }

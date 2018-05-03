@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public abstract class Biblioteca {
 	public static int obtenerNumero() {
@@ -40,11 +41,11 @@ public abstract class Biblioteca {
 	 * Esta función lee los archivos csv y los carga en un arraylist
 	 */
 	
-	public static ArrayList<Libro> input(int numero) {
+	public static MySimpleLinkedList input(int numero) {
 		String csvFile = "C:\\Users\\maxi\\Desktop\\tpe prog3\\dataset" + numero + ".csv";
 		String line = "";
 		String cvsSplitBy = ",";
-		ArrayList<Libro> libros = new ArrayList<Libro>();
+		MySimpleLinkedList libros = new MySimpleLinkedList();
 
 		String[] aux;
 
@@ -54,7 +55,7 @@ public abstract class Biblioteca {
 				if (!items[3].equals("Generos")) {
 					aux = separadorGeneros(items[3]);
 					Libro a = new Libro(items[0], items[1], items[2], aux);
-					libros.add(a);
+					libros.insertAlFinal(a);
 				}
 			}
 		} catch (IOException e) {
