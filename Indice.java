@@ -1,4 +1,4 @@
-
+package tpe;
 
 public class Indice {
 	protected String genero;
@@ -20,8 +20,6 @@ public class Indice {
 	public MySimpleLinkedList getLibros() {
 		return libros;
 	}
-	
-
 	
 	public void addLibro(Libro l) {
 		libros.insertAlFinal(l);

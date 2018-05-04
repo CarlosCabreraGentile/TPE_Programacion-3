@@ -1,3 +1,4 @@
+package tpe;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 
 public abstract class Biblioteca {
+	
 	public static int obtenerNumero() {
 		boolean exit = false;
 		int valor = 0;
@@ -35,6 +37,7 @@ public abstract class Biblioteca {
 		} while (!exit);
 		return valor;
 	}
+	
 	/**
 	 * @param numero
 	 * @return 
@@ -65,6 +68,7 @@ public abstract class Biblioteca {
 //		System.out.println(ObjectSizeFetcher.getObjectSize(libros2));
 		return libros; 
 	}
+	
 	/**
 	 * @param generos
 	 * @return
@@ -75,6 +79,7 @@ public abstract class Biblioteca {
 		String[] arrGeneros = generos.split(" ");
 		return arrGeneros;
 	}
+	
 	/**
 	 * @param generosLibro
 	 * Esta función escribe un archivo csv 

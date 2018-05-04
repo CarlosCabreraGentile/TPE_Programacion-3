@@ -1,4 +1,4 @@
-
+package tpe;
 public class ArbolBinario {
 	protected NodeArbol root;
 	private int contador;
@@ -104,6 +104,7 @@ public class ArbolBinario {
 	public void setContador(int contador) {
 		this.contador = contador;
 	}
+	
 	private class NodeArbol {
 		private Indice info;
 		private NodeArbol nodeDerecha;
@@ -135,8 +136,6 @@ public class ArbolBinario {
 		public NodeArbol getNodeIzq() {
 			return nodeIzquierda;
 		}
-		
 	}
 	
-
 }

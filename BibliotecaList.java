@@ -1,4 +1,4 @@
-
+package tpe;
 import java.util.ArrayList;
 
 public class BibliotecaList extends Biblioteca{
@@ -36,7 +36,6 @@ public class BibliotecaList extends Biblioteca{
 		return retorno; 
 	}  
 	
-
 	private static void print(ArrayList<Indice> libros) {
 		for (int i = 0; i < libros.size(); i++) {
 			System.out.print(libros.get(i).getGenero() + " ");
@@ -58,6 +57,7 @@ public class BibliotecaList extends Biblioteca{
 		}
 		return retorno;
 	}
+	
 	/**
 	 * @param retorno
 	 * @param arrGeneros
@@ -90,6 +90,5 @@ public class BibliotecaList extends Biblioteca{
 			}
 		}
 	}
-	
 
 }

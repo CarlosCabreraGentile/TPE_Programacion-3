@@ -1,9 +1,10 @@
-
+package tpe;
 public class MySimpleLinkedList {
 	protected Node first;
 	protected int size;
 	protected Node cursor;
 	protected Node last;
+	
 	public MySimpleLinkedList() {
 		first = null;
 	}
@@ -15,6 +16,7 @@ public class MySimpleLinkedList {
 		cursor = first;
 		size++;
 	}
+	
 	public void insertAlFinal(Libro o) {
 		Node tmp = new Node(o, null);
 		if(first==null) {
@@ -55,6 +57,7 @@ public class MySimpleLinkedList {
 		cursor = cursor.getNext();
 		return tmp.getInfo();
 	}
+	
 	public void resetCursor() {
 		cursor = first;
 	}
@@ -62,6 +65,7 @@ public class MySimpleLinkedList {
 	public boolean hasNext() {
 		return cursor != null;
 	}
+	
 	private class Node {
 		private Libro info;
 		private Node next;
@@ -84,7 +88,6 @@ public class MySimpleLinkedList {
 		public Node getNext() {
 			return next;
 		}
-
 	}
 
 }

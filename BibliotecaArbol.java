@@ -1,4 +1,4 @@
-
+package tpe;
 public class BibliotecaArbol extends Biblioteca{
 
 	public static void main(String[] args) {
@@ -14,6 +14,7 @@ public class BibliotecaArbol extends Biblioteca{
 		indiceArbolBinario.printPreOrder();
 
 	}
+	
 	public static ArbolBinario crearIndice(MySimpleLinkedList libros) {
 		ArbolBinario retorno = new ArbolBinario();
 		String[] arregloGeneros;

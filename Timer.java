@@ -1,4 +1,4 @@
-
+package tpe;
 public class Timer {
 	private double startTime;
 
