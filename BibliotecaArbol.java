@@ -7,11 +7,10 @@ public class BibliotecaArbol extends Biblioteca{
 		MySimpleLinkedList archivoDataset = input(numeroDataSet);
 		indiceArbolBinario = crearIndice(archivoDataset);
 
-		buscarGenero(indiceArbolBinario, "tecnología").print();
 		System.out.println(indiceArbolBinario.getContador());
 		System.out.println("Cantidad de comparaciones "+indiceArbolBinario.getCantidadDeComparaciones());
 		System.out.println("Cantidad de consultas para la busqueda "+indiceArbolBinario.getCantidadDeBusqueda());
-		indiceArbolBinario.printPreOrder();
+		output(buscarGenero(indiceArbolBinario, "terror"));
 
 	}
 	

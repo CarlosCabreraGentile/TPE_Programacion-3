@@ -1,4 +1,8 @@
 package tpe;
+
+/**
+ * Las variables del tipo int en el arbol estan simplemente puestas a modo de prueba para
+ * poder contar cantidad de accesos para armar el informe*/
 public class ArbolBinario {
 	protected NodeArbol root;
 	private int contador;
@@ -117,7 +121,6 @@ public class ArbolBinario {
 		}
 
 		public void setNodeIzq(NodeArbol p) {
-			// TODO Auto-generated method stub
 			nodeIzquierda = p; 
 		}
 

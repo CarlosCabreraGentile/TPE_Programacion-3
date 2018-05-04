@@ -6,16 +6,14 @@ public class BibliotecaList extends Biblioteca{
 	static int contadorBusqueda;
 	public static void main(String[] args) {
 		int numeroDataSet = obtenerNumero();
-		ArrayList<Indice> indice;
+		ArrayList<Indice> indice; 
 		
 		MySimpleLinkedList archivoDataset = input(numeroDataSet);
 		indice = crearIndice(archivoDataset);
 		buscarGeneroEnLista(indice, "tecnología").print();
 		System.out.println("Cantidad de consultas para la busqueda "+ contadorBusqueda);
-		System.out.println("arrayList "+contador);
-		print(indice);
 		
-		// output(buscarGenero(indice, "terror"));
+		output(buscarGeneroEnLista(indice, "terror"));
 
 	}
 	
@@ -66,7 +64,7 @@ public class BibliotecaList extends Biblioteca{
 	
 	private static void cargarListaIndices(ArrayList<Indice> retorno, String[] arrGeneros,Libro l) {/* carlos , maxi,silvina */
 		Indice k;
-		if (retorno.isEmpty()) {/*solo en el primer libro que llega*/
+		if (retorno.isEmpty()) {
 			k = new Indice(arrGeneros[0]);
 			k.addLibro(l);
 			retorno.add(k);

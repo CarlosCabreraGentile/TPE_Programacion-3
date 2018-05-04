@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-
+/**
+ * Creamos la clase abstracta para no repetir el mismo codigo ya que creamos las clases
+ * BibliotecaList y BibliotecaArbol, y ambas tienen codigo repetido */
 public abstract class Biblioteca {
 	
 	public static int obtenerNumero() {
@@ -45,7 +47,7 @@ public abstract class Biblioteca {
 	 */
 	
 	public static MySimpleLinkedList input(int numero) {
-		String csvFile = "C:\\Users\\maxi\\Desktop\\tpe prog3\\dataset" + numero + ".csv";
+		String csvFile = "C:\\Tudai\\2do año\\Programacion 3\\2018\\tpe\\dataset" + numero + ".csv";
 		String line = "";
 		String cvsSplitBy = ",";
 		MySimpleLinkedList libros = new MySimpleLinkedList();
@@ -64,8 +66,6 @@ public abstract class Biblioteca {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		System.out.println(ObjectSizeFetcher.getObjectSize(libros));
-//		System.out.println(ObjectSizeFetcher.getObjectSize(libros2));
 		return libros; 
 	}
 	
@@ -81,11 +81,11 @@ public abstract class Biblioteca {
 	}
 	
 	/**
-	 * @param generosLibro
+	 * @param listaLibros
 	 * Esta función escribe un archivo csv 
 	 */
 	
-	public static void output(ArrayList<Libro> generosLibro) {
+	public static void output(MySimpleLinkedList listaLibros) {
 		BufferedWriter bw = null;
 		try {
 			File file = new File("C:\\Tudai\\2do año\\Programacion 3\\2018\\tpe/salida.csv");
@@ -97,11 +97,12 @@ public abstract class Biblioteca {
 			bw = new BufferedWriter(fw);
 			bw.write("Lista de libros encontrada: \n");
 
-			for (int i = 0; i < generosLibro.size(); i++) {
-				String contenidoLinea1 = generosLibro.get(i).nombre;
+			for (int i = 0; i < listaLibros.size(); i++) {
+				String contenidoLinea1 = listaLibros.getNodo().getNombre();
 				bw.write(contenidoLinea1);
 				bw.newLine();
 			}
+			listaLibros.resetCursor();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} finally {
