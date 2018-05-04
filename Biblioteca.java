@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.LinkedList;
+
 
 public abstract class Biblioteca {
 	public static int obtenerNumero() {
@@ -46,7 +46,6 @@ public abstract class Biblioteca {
 		String line = "";
 		String cvsSplitBy = ",";
 		MySimpleLinkedList libros = new MySimpleLinkedList();
-
 		String[] aux;
 
 		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -55,12 +54,15 @@ public abstract class Biblioteca {
 				if (!items[3].equals("Generos")) {
 					aux = separadorGeneros(items[3]);
 					Libro a = new Libro(items[0], items[1], items[2], aux);
+					
 					libros.insertAlFinal(a);
 				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+//		System.out.println(ObjectSizeFetcher.getObjectSize(libros));
+//		System.out.println(ObjectSizeFetcher.getObjectSize(libros2));
 		return libros; 
 	}
 	/**
@@ -106,4 +108,5 @@ public abstract class Biblioteca {
 			}
 		}
 	}
+	
 }

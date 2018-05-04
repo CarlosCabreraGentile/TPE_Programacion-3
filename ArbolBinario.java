@@ -2,6 +2,24 @@
 public class ArbolBinario {
 	protected NodeArbol root;
 	private int contador;
+	private int cantidadDeComparaciones;
+	private int cantidadDeBusqueda;
+
+	public int getCantidadDeComparaciones() {
+		return cantidadDeComparaciones;
+	}
+
+	public void setCantidadDeComparaciones() {
+		this.cantidadDeComparaciones = this.contador;
+	}
+
+	public int getCantidadDeBusqueda() {
+		return cantidadDeBusqueda;
+	}
+
+	public void setCantidadDeBusqueda() {
+		this.cantidadDeBusqueda = this.contador-this.cantidadDeComparaciones;
+	}
 
 	public ArbolBinario() {
 		root = null;
@@ -97,19 +115,9 @@ public class ArbolBinario {
 			nodeIzquierda = null;
 		}
 
-		public NodeArbol(Indice o, NodeArbol n , NodeArbol p) {
-			setInfo(o);
-			setNodeDer(n);
-			setNodeIzq(p);
-		}
-
 		public void setNodeIzq(NodeArbol p) {
 			// TODO Auto-generated method stub
 			nodeIzquierda = p; 
-		}
-
-		public void setInfo(Indice o) {
-			info = o;
 		}
 
 		public void setNodeDer(NodeArbol n) {

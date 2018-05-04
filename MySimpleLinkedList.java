@@ -37,7 +37,7 @@ public class MySimpleLinkedList {
 	public void print() {
 		Node aux = first;
 		for (int i = 0; i < this.size(); i++) {
-			System.out.println(aux.getInfo());
+			System.out.println(aux.getInfo().getNombre());
 			aux = aux.getNext();
 		}
 	}
@@ -65,16 +65,10 @@ public class MySimpleLinkedList {
 	private class Node {
 		private Libro info;
 		private Node next;
-		private Node previous;
 		public Node(Libro o, Node n) {
-			info = o;
+			this.setInfo(o);;
 			next = n;
 		}
-		public void setPrevious(Node p) {
-			// TODO Auto-generated method stub
-			previous = p; 
-		}
-
 		public void setInfo(Libro o) {
 			info = o;
 		}
@@ -90,9 +84,7 @@ public class MySimpleLinkedList {
 		public Node getNext() {
 			return next;
 		}
-		public Node getPrevious() {
-			return previous;
-		}
+
 	}
 
 }
